@@ -12,6 +12,45 @@ The long-term goal of the project is to explore an operating architecture that c
 
 This repository is part of that effort: a practical experimentation ground for local inference, lightweight mobile integration, and a chat-based user experience around the LAI model.
 
+## LAI Concept
+
+LAI V3 is a lightweight bilingual causal language model developed by the Pixxle / LAI team for local inference.
+
+The intended product target is an offline mobile assistant that can:
+
+- handle short conversations in French and English
+- answer grounded factual questions from injected facts
+- prefer `I don't know` or `Je ne sais pas` when the relevant facts are not available
+
+The core idea behind LAI is not to push all intelligence into a very large model running entirely from raw parameters. Instead, the project aims to combine:
+
+- a lightweight conversational model for natural French and English dialogue
+- a structured local knowledge base stored in `JSONL`
+- local retrieval so the assistant can look up relevant facts before answering
+
+This design is intended to reduce RAM pressure on mobile devices while still allowing useful, natural, and context-aware responses.
+
+## Intended Operating Architecture
+
+The planned LAI behavior is:
+
+1. the user asks a question in French or English
+2. LAI searches its local knowledge base
+3. LAI answers naturally from the retrieved facts
+4. if the information is missing, LAI should prefer `I don't know` or `Je ne sais pas`
+
+The longer-term product concept goes further:
+
+- when LAI does not know the answer, it should be able to search online, retrieve the missing information, answer the user, and then save useful facts back into its knowledge base
+- LAI should progressively learn about its user over time, remember useful preferences or personal context, and sometimes ask follow-up questions to better understand the user
+
+In other words, the model is meant to be both:
+
+- a natural bilingual conversation layer
+- a local knowledge-grounded assistant that becomes more useful over time
+
+Some parts of that product vision are already reflected in the repository structure, but the full end-to-end behavior is not yet implemented.
+
 The repository currently focuses on three things:
 
 - a simple chat UI built with Ionic Angular
@@ -40,6 +79,7 @@ Preferred attribution:
 - Ionic Angular app scaffold in `src/`
 - sample chat interface
 - prompt builder and small sample knowledge base
+- early groundwork for a knowledge-grounded local assistant architecture
 - Capacitor plugin contract in `src/app/services/lai.plugin.ts`
 - iOS native integration code in `ios/App/App/`
 - the current LAI mobile test model in `ios/App/App/Resources/`
@@ -50,6 +90,7 @@ Preferred attribution:
 - a one-click model download pipeline
 - validated Android support
 - full automated tests for the native stack
+- the full planned online fallback and long-term user-learning loop
 
 ## Quick start
 
