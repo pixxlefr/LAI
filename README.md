@@ -2,6 +2,8 @@
 
 LAI is an experimental Ionic Angular + Capacitor application that aims to run a custom LAI language model locally on iPhone.
 
+Light Artificial Intelligence (LAI) by Pixxle is designed to operate locally on iPhone with an architecture that aims to reduce RAM usage and move toward broader mobile-device support.
+
 The repository currently focuses on three things:
 
 - a simple chat UI built with Ionic Angular
