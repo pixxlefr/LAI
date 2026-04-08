@@ -1,28 +1,42 @@
 # Model Assets
 
-This repository does not ship the LAI model weights by default.
+This repository ships the current LAI mobile test assets via Git LFS.
 
 ## Why
 
 - the model files are large
-- redistribution rights may differ from the source code license
-- contributors should be able to work on the app without cloning large binaries
+- contributors should be able to reproduce the same baseline test setup as maintainers
+- Git LFS keeps large binaries manageable inside the GitHub workflow
 
-## Expected local assets
+## Included assets
 
-The iOS native bridge expects these files to be available locally:
+The iOS native bridge expects these files, and they are now versioned in the repository:
 
 - `lai_v3_mobile.ptl`
 - `tokenizer_spm.model`
 - `tokenizer_spm.json`
 
+## Contributor setup
+
+Install Git LFS before cloning, or run the following after cloning:
+
+```bash
+git lfs install
+git lfs pull
+```
+
+The expected location is:
+
+- `ios/App/App/Resources/`
+
 ## Recommended practice
 
-- keep model assets out of git
-- document where maintainers can obtain them privately
-- avoid committing generated or proprietary binaries to pull requests
+- keep the committed test assets reproducible and stable
+- use Git LFS for large future LAI model revisions
+- avoid adding unrelated generated binaries to pull requests
 
-## Future improvement
+## Attribution
 
-A contributor-friendly asset bootstrap flow would be a great addition to this repository.
+When redistributing substantial parts of the repository, preserve the project attribution:
 
+- `Pixxle SAS - LAI Project`

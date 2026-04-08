@@ -51,11 +51,18 @@ If you regenerate the iOS project manually, make sure `LaiModelPlugin` is regist
 
 ## 5. Provide model assets locally
 
-The app expects these files locally:
+The repository now includes these files via Git LFS:
 
 - `lai_v3_mobile.ptl`
 - `tokenizer_spm.model`
 - `tokenizer_spm.json`
+
+After cloning, run:
+
+```bash
+git lfs install
+git lfs pull
+```
 
 See `docs/MODEL_ASSETS.md` for the repository policy around large binaries.
 
@@ -129,5 +136,5 @@ App/App-Bridging-Header.h
 ## 9. Current caveats
 
 - the native iOS path is still experimental
-- model assets are not bundled in git
+- the current mobile test assets are bundled via Git LFS
 - fresh-clone iOS validation still needs more community testing

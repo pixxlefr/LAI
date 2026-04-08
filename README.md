@@ -23,7 +23,7 @@ The repository currently focuses on three things:
 - The web app builds successfully with `npm run build`.
 - The iOS project is present in the repository and can be opened in Xcode.
 - The native LAI integration is still experimental and has not yet been fully validated end-to-end on a real device.
-- Model weights are intentionally not bundled in this repository.
+- The current mobile test model and tokenizer are included in the repository via Git LFS so contributors can reproduce the same baseline setup.
 
 This project is now being opened to the community to improve the iOS integration, developer experience, and packaging story.
 
@@ -42,11 +42,11 @@ Preferred attribution:
 - prompt builder and small sample knowledge base
 - Capacitor plugin contract in `src/app/services/lai.plugin.ts`
 - iOS native integration code in `ios/App/App/`
+- the current LAI mobile test model in `ios/App/App/Resources/`
 - setup and status documentation in `docs/`
 
 ## What is not included
 
-- proprietary or large LAI model assets
 - a one-click model download pipeline
 - validated Android support
 - full automated tests for the native stack
@@ -55,8 +55,12 @@ Preferred attribution:
 
 Use Node 20 or Node 22.
 
+Install Git LFS once on your machine, then make sure the model artifacts are pulled after cloning.
+
 ```bash
 cd <repo-root>
+git lfs install
+git lfs pull
 nvm use
 npm ci
 npm run build
@@ -90,7 +94,7 @@ The highest-impact contribution areas right now are:
 
 - end-to-end iPhone validation for the native inference path
 - cleanup and stabilization of the SentencePiece integration
-- packaging of model assets without committing large binaries
+- packaging strategy for distributing future LAI model revisions
 - streaming generation UX and better error handling
 - tests and CI around the current web app behavior
 
@@ -111,4 +115,4 @@ Please read:
 
 The source code in this repository is released under the MIT license.
 
-Pretrained model weights, tokenizer binaries, and other large assets are not bundled by default and are not automatically covered by this repository license unless explicitly stated.
+The current LAI mobile test artifacts are included in this repository via Git LFS to help contributors reproduce the same test setup. Please preserve the repository attribution and license notices when redistributing substantial parts of this project.

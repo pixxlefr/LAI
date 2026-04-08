@@ -28,10 +28,6 @@ ios/App/**/xcuserdata/
 # Capacitor generated web bundle inside iOS
 ios/App/App/public/
 
-# Local model assets and third-party binaries
-ios/App/App/Resources/*.ptl
-ios/App/App/Resources/tokenizer_spm.model
-ios/App/App/Resources/tokenizer_spm.json
+# Third-party native binaries kept local
 ios/App/App/sentencepiece_processor.h
 ios/App/App/libsentencepiece.a
-
