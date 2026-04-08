@@ -1,0 +1,7 @@
+{
+  "name": "LAI",
+  "type": "angular",
+  "integrations": {
+    "capacitor": {}
+  }
+}

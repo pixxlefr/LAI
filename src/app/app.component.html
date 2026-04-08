@@ -1,0 +1,40 @@
+<!-- Copyright (c) 2026 Pixxle SAS - LAI Project -->
+<!-- Licensed under the MIT License. -->
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>LAI</ion-title>
+      <ion-buttons slot="end">
+        <ion-badge [color]="modelReady ? 'success' : 'medium'">
+          Modèle: {{ modelReady ? 'prêt' : 'non chargé' }}
+        </ion-badge>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="chat">
+      <div class="message" *ngFor="let msg of messages" [ngClass]="msg.role">
+        <span class="meta">{{ msg.role === 'user' ? 'Vous' : 'LAI' }}</span>
+        <div>{{ msg.text }}</div>
+      </div>
+    </div>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-item lines="none">
+        <ion-textarea
+          [(ngModel)]="inputMessage"
+          autoGrow="true"
+          placeholder="Écris ton message..."
+          rows="1"
+          (keydown.enter)="onEnter($event)"
+        ></ion-textarea>
+        <ion-button slot="end" [disabled]="sending" (click)="sendMessage()">
+          Envoyer
+        </ion-button>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>

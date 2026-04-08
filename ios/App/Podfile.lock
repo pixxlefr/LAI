@@ -1,0 +1,33 @@
+PODS:
+  - Capacitor (6.2.1):
+    - CapacitorCordova
+  - CapacitorCordova (6.2.1)
+  - LibTorch-Lite (2.1.0):
+    - LibTorch-Lite/Core (= 2.1.0)
+  - LibTorch-Lite/Core (2.1.0):
+    - LibTorch-Lite/Torch
+  - LibTorch-Lite/Torch (2.1.0)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - LibTorch-Lite (~> 2.0)
+
+SPEC REPOS:
+  trunk:
+    - LibTorch-Lite
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+
+SPEC CHECKSUMS:
+  Capacitor: c95400d761e376be9da6be5a05f226c0e865cebf
+  CapacitorCordova: 8d93e14982f440181be7304aa9559ca631d77fff
+  LibTorch-Lite: ab75e4e60244786473c2e8f268c09af77240d127
+
+PODFILE CHECKSUM: 36d61bd814214cf90ddb707677ef61da1c578e39
+
+COCOAPODS: 1.16.2

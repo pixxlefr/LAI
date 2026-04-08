@@ -1,0 +1,27 @@
+/* Copyright (c) 2026 Pixxle SAS - LAI Project */
+/* Licensed under the MIT License. */
+
+@import '@ionic/angular/css/core.css';
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/padding.css';
+@import '@ionic/angular/css/float-elements.css';
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
+@import '@ionic/angular/css/display.css';
+
+@import './theme/variables';
+
+:root {
+  --lai-bg: #f6f4ef;
+  --lai-surface: #ffffff;
+  --lai-user: #cfe9ff;
+  --lai-assistant: #f1e6ff;
+  --lai-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+ion-content {
+  --background: var(--lai-bg);
+}

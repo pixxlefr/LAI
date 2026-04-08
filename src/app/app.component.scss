@@ -1,0 +1,35 @@
+/* Copyright (c) 2026 Pixxle SAS - LAI Project */
+/* Licensed under the MIT License. */
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.message {
+  max-width: 86%;
+  padding: 12px 14px;
+  border-radius: 16px;
+  line-height: 1.45;
+  box-shadow: var(--lai-shadow);
+  background: var(--lai-surface);
+}
+
+.message.user {
+  align-self: flex-end;
+  background: var(--lai-user);
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background: var(--lai-assistant);
+}
+
+.message .meta {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
